@@ -10,11 +10,11 @@
     		<p><b>Выберите <ins>ТОЛЬКО</ins> три варианта...</b></p>
 
     		<form name="form1">
-    			<input type="checkbox" name="ch" id="ch1" value="1" onclick="cl(this)">Вариант 1</br>
-    			<input type="checkbox" name="ch" id="ch2" value="2" onclick="cl(this)">Вариант 2</br>
-    			<input type="checkbox" name="ch" id="ch3" value="3" onclick="cl(this)">Вариант 3</br>
-    			<input type="checkbox" name="ch" id="ch4" value="4" onclick="cl(this)">Вариант 4</br>
-    			<input type="checkbox" name="ch" id="ch5" value="5" onclick="cl(this)">Вариант 5</br>
+    			<input type="checkbox" name="ch" onclick="cl(this)">Вариант 1</br>
+    			<input type="checkbox" name="ch" onclick="cl(this)">Вариант 2</br>
+    			<input type="checkbox" name="ch" onclick="cl(this)">Вариант 3</br>
+    			<input type="checkbox" name="ch" onclick="cl(this)">Вариант 4</br>
+    			<input type="checkbox" name="ch" onclick="cl(this)">Вариант 5</br>
     		</form>
     	</div>
 
@@ -24,38 +24,36 @@
 
         function cl(elem)
 		{
-            //if (elem.checked)
-            //alert(elem.value);
-            //elem.setAttribute('disabled', 'disabled');
-            if (elem.value == 4)
-                elem.setAttribute('checked',false);
-
-
-
-
             for (var i = 0; i < gr.length; i++)
             {
-
-
-
-              /*  if (temp < 4)
+                if (gr[i].checked)
                 {
-                    if (gr[i].checked)
+                    temp++;
+                }
+            }
+            //alert(temp);
+
+            if (temp > 2)
+            {
+                for (var i = 0; i < gr.length; i++)
+                {
+                    if (!gr[i].checked)
                     {
-                        alert(gr[i].value);
-                        temp++;
+                        gr[i].disabled = true;
+                        gr[i].checked = false;
                     }
                 }
-                else
+            }
+            else
+            {
+                for (var i = 0; i < gr.length; i++)
                 {
-
-                    elem.setAttribute('disabled', 'disabled');
-                    elem.setAttribute('checked','');
+                    gr[i].disabled = false;
+                    //gr[i].checked = false;
                 }
-*/
+            }
 
-           }
-
+            temp = 0;
 		}
 	</script>
 
