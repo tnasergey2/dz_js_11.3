@@ -10,22 +10,51 @@
     		<p><b>Выберите <ins>ТОЛЬКО</ins> три варианта...</b></p>
 
     		<form name="form1">
-    			<input type="checkbox" name="ch" value="ch1" onclick="cl(this)">Вариант 1</br>
-    			<input type="checkbox" name="ch" value="ch2" onclick="cl(this)">Вариант 2</br>
-    			<input type="checkbox" name="ch" value="ch3" onclick="cl(this)">Вариант 3</br>
-    			<input type="checkbox" name="ch" value="ch4" onclick="cl(this)">Вариант 4</br>
-    			<input type="checkbox" name="ch" value="ch5" onclick="cl(this)">Вариант 5</br>
+    			<input type="checkbox" name="ch" id="ch1" value="1" onclick="cl(this)">Вариант 1</br>
+    			<input type="checkbox" name="ch" id="ch2" value="2" onclick="cl(this)">Вариант 2</br>
+    			<input type="checkbox" name="ch" id="ch3" value="3" onclick="cl(this)">Вариант 3</br>
+    			<input type="checkbox" name="ch" id="ch4" value="4" onclick="cl(this)">Вариант 4</br>
+    			<input type="checkbox" name="ch" id="ch5" value="5" onclick="cl(this)">Вариант 5</br>
     		</form>
     	</div>
 
 	<script>
         var gr = document.getElementsByName('ch');
-        function cl(myVar)
+        var temp = 0;
+
+        function cl(elem)
 		{
-            for (var i = 0; i < i.length; i++)
+            //if (elem.checked)
+            //alert(elem.value);
+            //elem.setAttribute('disabled', 'disabled');
+            if (elem.value == 4)
+                elem.setAttribute('checked',false);
+
+
+
+
+            for (var i = 0; i < gr.length; i++)
             {
-                if (gr[i])
-            }
+
+
+
+              /*  if (temp < 4)
+                {
+                    if (gr[i].checked)
+                    {
+                        alert(gr[i].value);
+                        temp++;
+                    }
+                }
+                else
+                {
+
+                    elem.setAttribute('disabled', 'disabled');
+                    elem.setAttribute('checked','');
+                }
+*/
+
+           }
 
 		}
 	</script>
